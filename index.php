@@ -14,12 +14,7 @@ $_SESSION["cart"]=null;
 
 $smarty = new Smarty();
 
-$array = array("1"=>"arr","2"=>"arrrr","3"=>"arrrrrrrrr");
-$smarty->assign(
-    array(
-        "var1"=>"ok",
-        "var2"=>"ok2",
-        "array"=>$array)
-);
+$array = array("arr","arrrr","arrrrrrrrr");
+$smarty->assign(array("array"=>$array));
 
-$smarty->display("mapage.html");
+$smarty->display("index.html");

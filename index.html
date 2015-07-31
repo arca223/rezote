@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+    <script type="text/javascript" src="libs/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
+</head>
+<body>
+
+
+
+<form id="cart" action="cart.php" method="post">
+
+
+
+
+    {foreach from=$array item=product}
+
+    <label for={$product}>{$product}</label>
+    <input type="hidden" name="product[]" value={$product}>
+    <input id={$product} name="qt[]"  type="text">
+    <br />
+
+    {/foreach}
+
+
+    <input value="Add to cart" type="submit" class="add-to-cart">
+
+
+</form>
+
+
+
+</body>
+</html>
