@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>EditCart</title>
+
+    <script type="text/javascript" src="libs/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
+    <script>$(document).ready()</script>
 </head>
 <body>
 
-{foreach from=$cart item=prod}
+{foreach from=$cart key=prod item=qt}
 
-{$prod}
-
+{$prod} : {$qt}
+<br />
 {/foreach}
 
+<form method="POST" action="cart.php">
+    <input type="submit" name="nameTest" id="btn" value="Click" onclick="test();">
+</form>
 
 </body>
 </html>

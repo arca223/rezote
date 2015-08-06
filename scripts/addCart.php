@@ -8,12 +8,19 @@
  */
 
 function addCart() {
+    $cart = new Cart();
+
+    $_SESSION["decode"]=json_decode($_POST);
+    $_SESSION["test"]="test";
+
+    /*$_SESSION["post"] = $_POST;
     $name = $_POST["name"];
+    $cart->submitCart($name);
     var_dump($name);
+
     if (isset($_SESSION["cart"][$name])){
-        $_SESSION["cart"][$name]++;
+        $_SESSION["test"]="ok";
     } else {
-        $_SESSION["cart"][$name]=1;
-    }
-    var_dump($_SESSION["cart"][$name]);
+        $_SESSION["test"]="issefpasok";
+    }*/
 }

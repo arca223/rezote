@@ -6,22 +6,24 @@
  * To change this template use File | Settings | File Templates.
  */
 
+function ok(){
+    alert('ok');
+}
 
-$("#btn").click( function()
-    {
-        alert('button clicked');
-    }
-);
 
-function ok() {
-    alert('button clicked ok');
+//$("#btn").click(
+function test(){
     var name = $(this).attr('name');
     $.ajax({
         type: 'POST',
         url: 'scripts/addCart.php',
-        data: name
+        data: name,
+        success: console.log(),
+        error: alert('ok')
     });
 }
+
+
 
 
 function setCookie(cname, cvalue, exdays) {
