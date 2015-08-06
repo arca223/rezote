@@ -9,15 +9,26 @@
 
 class Cart {
 
+    private $ref;
+    private $user;
 
-    function submitCart() {
-        $name = $_POST["name"];
-        var_dump($name);
-        if (isset($_SESSION["cart"][$name])){
-            $_SESSION["cart"][$name]++;
+
+    public function __construct() {
+
+    }
+
+    //add the cart to session. if it exits, increment the quantity or add the new products
+    function submitCart($cart) {
+        if (isset($_SESSION["cart"])){
+            foreach ($cart as $product=>$qt) {
+                if (isset($_SESSION["cart"][$product])) {
+                    $_SESSION["cart"][$product]+=$qt;
+                } else {
+                    $_SESSION["cart"][$product]=$qt;
+                }
+            }
         } else {
-            $_SESSION["cart"][$name]=1;
+            $_SESSION["cart"]=$cart;
         }
-        var_dump($_SESSION["cart"][$name]);
     }
 }
