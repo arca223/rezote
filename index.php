@@ -11,10 +11,9 @@ require("/libs/smarty.class.php");
 
 session_start();
 $_SESSION["cart"]=null;
-
 $smarty = new Smarty();
 
 $array = array("arr","arrrr","arrrrrrrrr");
 $smarty->assign(array("array"=>$array));
-
+var_dump($_SESSION);
 $smarty->display("index.html");
